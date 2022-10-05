@@ -2,7 +2,7 @@
     "apps":[
         {
             "name":"Campus-RD",
-            "script":"egg/index.js",
+            "script":"node_modules/egg/index.js",
             "env":{
                 "COMMON_VARIABLE":"true"
             },
