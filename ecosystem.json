@@ -15,7 +15,7 @@
         "production":{
             "user":"root",
             "host":["121.40.100.87"],
-            "port":8083,
+            "port":39999,
             "ref":"origin/main",
             "repo":"git@github.com:LevyEvans-s/campus-rd.git",
             "path":"/www/campus-rd/production",
