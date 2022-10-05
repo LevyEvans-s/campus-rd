@@ -18,7 +18,7 @@ class UserController extends Controller {
             return;
         }
 
-        const result = await ctx.service.User.add({
+        const result = await ctx.service.user.add({
             ...params,
             password: md5(params.password + app.config.salt),
             createTime: dayjs().format('YYYY-MM-DD HH:mm:ss')

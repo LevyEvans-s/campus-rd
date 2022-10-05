@@ -7,7 +7,7 @@ module.exports = app => {
         async set(key,value,maxAge) {
             store[key]=value
         },
-        async destory() {
+        async destroy(key) {
             store[key] = null
         }
     }
