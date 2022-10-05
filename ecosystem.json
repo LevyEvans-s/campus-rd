@@ -2,7 +2,7 @@
     "apps":[
         {
             "name":"Campus-RD",
-            "script":"app.js",
+            "script":"egg-scripts start --daemon --title=egg-server-campus-rd",
             "env":{
                 "COMMON_VARIABLE":"true"
             },
