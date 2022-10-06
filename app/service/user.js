@@ -29,7 +29,7 @@ class UserService extends Service {
   /**
      * @param params
      * @author
-     * @description
+     * @description 向数据库中user表添加用户
      * @date 2022-10-05 17:05xs
      * @version v1.0
      */
