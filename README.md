@@ -2,32 +2,6 @@
 
 阿里终端练习生-校园综合社交平台后端
 
-## QuickStart
+项目启动与部署
 
-<!-- add docs here for user -->
-
-see [egg docs][egg] for more detail.
-
-### Development
-
-```bash
-$ npm i
-$ npm run dev
-$ open http://localhost:7001/
-```
-
-### Deploy
-
-```bash
-$ npm start
-$ npm stop
-```
-
-### npm scripts
-
-- Use `npm run lint` to check code style.
-- Use `npm test` to run unit test.
-- Use `npm run autod` to auto detect dependencies upgrade, see [autod](https://www.npmjs.com/package/autod) for more detail.
-
-
-[egg]: https://eggjs.org
+https://nja6875znp.feishu.cn/docx/doxcn71kqEUOmYr5iXykxAY5p1g
