@@ -7,21 +7,25 @@
     "declarations": true
   },
   "dependencies": {
-    "egg": "^3",
+    "egg": "^3.3.3",
+    "egg-mysql": "^3.1.1",
     "egg-scripts": "^2",
-    "md5": "^2.3.0",
     "egg-sequelize": "^6.0.0",
     "egg-validate": "^2.0.2",
     "egg-view-ejs": "^3.0.0",
-    "mysql2": "^2.3.3",
-    "egg-mysql": "^3.1.1"
+    "md5": "^2.3.0",
+    "mysql2": "^2.3.3"
   },
   "devDependencies": {
+    "@commitlint/cli": "^12.1.4",
+    "@commitlint/config-conventional": "^12.1.4",
+    "cz-customizable": "^6.3.0",
     "egg-bin": "^5",
     "egg-ci": "^2",
     "egg-mock": "^5",
     "eslint": "^8",
-    "eslint-config-egg": "^12"
+    "eslint-config-egg": "^12",
+    "husky": "^7.0.1"
   },
   "engines": {
     "node": ">=16.0.0"
@@ -35,7 +39,8 @@
     "test-local": "egg-bin test",
     "cov": "egg-bin cov",
     "lint": "eslint .",
-    "ci": "npm run lint && npm run cov"
+    "ci": "npm run lint && npm run cov",
+    "prepare": "husky install"
   },
   "ci": {
     "version": "16, 18",
@@ -46,5 +51,17 @@
     "url": ""
   },
   "author": "Koto@北方银时",
-  "license": "MIT"
+  "license": "MIT",
+  "config": {
+    "commitizen": {
+      "path": "node_modules/cz-customizable"
+    }
+  },
+  "prepare": "husky install",
+  "lint-staged": {
+    "app/**/*.{js}": [
+      "eslint --fix",
+      "git add"
+    ]
+  }
 }
