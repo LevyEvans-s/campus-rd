@@ -74,9 +74,19 @@ module.exports = appInfo => {
     exclude: ['/api/user/login', '/api/user/register']
   };
 
+  config.redis = {
+    client:{
+      port:6379,
+      host:'127.0.0.1',
+      password:'sycredis',
+      db:0
+    }
+  }
+
   // add your user config here
   const userConfig = {
-    salt: 'campus_rd_^thisisasha256+rsa_pwd' // 加密盐，用于用户密码md5加密
+    salt: 'campus_rd_^thisisasha256+rsa_pwd', // 加密盐，用于用户密码md5加密
+    redisExpire: 60 * 60 * 24 
   };
 
   return {
