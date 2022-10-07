@@ -34,7 +34,9 @@ module.exports = appInfo => {
 
   config.session = {
     key:'CAMPUSS_SESS',
-    maxAge: 24 * 60 * 1000
+    httpOnly: true,
+    maxAge: 24 * 60 * 60 * 1000, //token过期时间24h
+    renew: true
   };
 
   config.mysql = {
@@ -48,6 +50,10 @@ module.exports = appInfo => {
       database: 'campus_rd_house'
     }
   };
+
+  config.jwt = {
+    secret: 'campus_rd_jwt+(520w1_)'
+  }
   
   // Sequelize config
   config.sequelize = {
@@ -61,6 +67,11 @@ module.exports = appInfo => {
       timestamps: false,
       freezeTableName: true
     }
+  };
+
+  // 登陆验证插件配置
+  config.auth = {
+    exclude: ['/api/user/login', '/api/user/register']
   };
 
   // add your user config here
