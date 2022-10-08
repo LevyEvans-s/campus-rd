@@ -12,13 +12,13 @@ module.exports = appInfo => {
    **/
   const config = exports = {};
 
-  config.cluster = {
-      listen: {
-          path: '',
-          port: 8083,
-          hostname: '127.0.0.1', // 0.0.0.0
-      }
-  }
+  // config.cluster = {
+  //   listen: {
+  //     path: '',
+  //     port: 8083,
+  //     hostname: '127.0.0.1', // 0.0.0.0
+  //   },
+  // };
 
   // use for cookie sign key, should change to your own and keep security
   config.keys = appInfo.name + '_1664958452533_8282';
@@ -33,8 +33,8 @@ module.exports = appInfo => {
   };
 
   config.session = {
-    key:'CAMPUSS_SESS',
-    maxAge: 24 * 60 * 1000
+    key: 'CAMPUSS_SESS',
+    maxAge: 24 * 60 * 1000,
   };
 
   config.mysql = {
@@ -44,28 +44,28 @@ module.exports = appInfo => {
       host: '127.0.0.1',
       port: '3306',
       user: 'root',
-      password: 'root',
-      database: 'campus_rd_house'
-    }
+      password: '123456',
+      database: 'campus_rd_house',
+    },
   };
-  
+
   // Sequelize config
   config.sequelize = {
     dialect: 'mysql',
     host: '127.0.0.1',
     port: '3306',
     user: 'root',
-    password: 'root',
+    password: '123456',
     database: 'campus_rd_house',
     define: {
       timestamps: false,
-      freezeTableName: true
-    }
+      freezeTableName: true,
+    },
   };
 
   // add your user config here
   const userConfig = {
-    salt: 'campus_rd_^thisisasha256+rsa_pwd' // 加密盐，用于用户密码md5加密
+    salt: 'campus_rd_^thisisasha256+rsa_pwd', // 加密盐，用于用户密码md5加密
   };
 
   return {

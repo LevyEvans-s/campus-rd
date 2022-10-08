@@ -1,18 +1,17 @@
 'use strict';
 
-const path = require('path')
 
 exports.validate = {
   enable: true,
-  package: 'egg-validate', 
+  package: 'egg-validate',
 };
 
 exports.sequelize = {
   enable: true,
-  package: 'egg-sequelize'
+  package: 'egg-sequelize',
 };
 
 exports.mysql = {
   enable: true,
-  package: 'egg-mysql'
+  package: 'egg-mysql',
 };
