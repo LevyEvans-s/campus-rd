@@ -24,6 +24,7 @@ class UserController extends BaseController {
       createTime: ctx.helper.timestamp(result.createTime),
     };
   }
+
   /**
      * @author koto
      * @description 用户注册
@@ -50,9 +51,9 @@ class UserController extends BaseController {
       this.success({
         ...this.parseResult(ctx, result),
         token,
-      });
+      }, '注册成功');
     } else {
-      this.error('注册使用失败ss');
+      this.error('注册失败');
     }
   }
 
@@ -73,7 +74,7 @@ class UserController extends BaseController {
       this.success({
         ...this.parseResult(ctx, user),
         token,
-      });
+      }, '登陆成功');
 
     } else {
       this.error('用户未注册');
@@ -93,7 +94,7 @@ class UserController extends BaseController {
     if (user) {
       this.success({
         ...this.parseResult(ctx, user),
-      });
+      }, '获取用户详情成功');
     } else {
       this.error('该用户不存在，无法获得用户详细信息');
     }
@@ -109,19 +110,25 @@ class UserController extends BaseController {
     const { ctx } = this;
     try {
       ctx.session[ctx.username] = null; // 清除session
-      this.success('ok');
+      this.success('', '退出登陆成功');
     } catch (error) {
-      this.error('用户退出登陆失败');
+      this.error('退出登陆失败');
     }
   }
 
+  /**
+   * @author koto
+   * @description 用户基本信息编辑
+   * @date 2022-10-08 08:16
+   * @version v1.0
+   */
   async edit() {
     const { ctx } = this;
     const result = await ctx.service.user.edit({
       ...ctx.params(),
       updateTime: ctx.helper.time(),
     });
-    this.success(result);
+    this.success(result, '编辑基本信息成功');
   }
 }
 

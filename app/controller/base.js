@@ -1,11 +1,12 @@
 const Controler = require('egg').Controller;
 
 class BaseController extends Controler {
-  success(data = {}) {
+  success(data = {}, msg = '') {
     const { ctx } = this;
     ctx.body = {
       status: 200,
       success: true,
+      msg,
       data,
     };
   }
