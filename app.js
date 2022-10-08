@@ -11,6 +11,9 @@ module.exports = app => {
             store[key] = null
         }
     }
+
+    // 中间件
+    app.config.coreMiddleware.push('auth')
 }
 
 const egg = require('egg');
