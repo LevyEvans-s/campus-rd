@@ -107,9 +107,11 @@ class UserController extends BaseController {
    * @version v1.0
    */
   async logout() {
-    const { ctx } = this;
+    const { ctx, app } = this;
     try {
-      ctx.session[ctx.username] = null; // 清除session
+      // ctx.session[ctx.username] = null; // 清除session
+      console.log(ctx.username);
+      await app.redis.del(ctx.username);
       this.success('', '退出登陆成功');
     } catch (error) {
       this.error('退出登陆失败');

@@ -16,7 +16,7 @@
             "user":"root",
             "host":["121.40.100.87"],
             "port":39999,
-            "ref":"origin/main",
+            "ref":"origin/develop",
             "repo":"git@github.com:LevyEvans-s/campus-rd.git",
             "path":"/www/campus-rd/production",
             "ssh_options":"StrictHostKeyChecking=no",
